@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Catálogos</h2>
+  
+    <div>
+      <h3>Agregar Catálogo</h3>
+      <form (ngSubmit)="addCatalog()">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" [(ngModel)]="catalog.name" name="name" required>
+
+  
+        <label for="description">Descripción</label>
+        <input type="text" id="description" [(ngModel)]="catalog.description" name="description" required>
+  
+        <button type="submit">Agregar Catálogo</button>
+      </form>
+    </div>
+  
+    <div>
+      <h3>Lista de Catálogos</h3>
+      <ul>
+        <li *ngFor="let catalog of catalogs">
+          {{ catalog.name }} - {{ catalog.description }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  
